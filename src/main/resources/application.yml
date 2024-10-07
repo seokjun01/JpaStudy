@@ -7,10 +7,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-      properties:
-        hibernate:
- #         show_sql: true
-          format_sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect  # H2 데이터베이스에 맞는 Dialect 설정
+        format_sql: true
+    show-sql: true
+
 logging:
   level:
     org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
