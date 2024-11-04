@@ -9,7 +9,6 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
     @Id @GeneratedValue
     @Column(name = " order_item_id")
@@ -22,7 +21,6 @@ public class OrderItem {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     private Order order;
-
     private int orderPrice; //주문가격
     private int count; //주문수량
 
@@ -43,7 +41,6 @@ public class OrderItem {
         orderItem.setItem(item);
         orderItem.setOrderPrice(orderPrice);
         orderItem.setCount(count);
-
         item.removeStock(count);
         return orderItem;
     }
