@@ -11,7 +11,6 @@ import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 @Repository
 @RequiredArgsConstructor
